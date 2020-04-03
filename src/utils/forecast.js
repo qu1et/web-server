@@ -5,15 +5,20 @@ const forecast = (latitude, logitude, callback) => {
 
     request({ url, json: true }, (error, { body }) => {
         if (error) {
-            callback('Unavaible to connect to weather service. Check your connection.', undefined);
+            callback('Невозможно подключиться к сервису. Проверьте ваше соединение.', undefined);
         } else if (body.error) {
-            callback('Unable to find forecast for this location. Try another search.', undefined);
+            callback('Невозможно найти прогноз для данного места. Попробуйте другое местоположение.', undefined);
         } else {
-            callback(undefined, body.daily.data[0].summary + ' It is currently '
+            callback(undefined, ' Температура сейчас составляет '
                                 + body.currently.temperature 
-                                + ' degrees out. There is a '
+                                + ' градусов по Цельсию.\n Вероятность осадков '
                                 + Math.floor(body.currently.precipProbability * 100) 
-                                + '% chance of precipitation.');
+                                + '%.\n Скорость ветра составляет ' 
+                                + body.currently.windSpeed + ' м/с.\n'
+                                + 'Максимальная температура сегодня достигнет ' 
+                                + body.daily.data[0].temperatureHigh
+                                + ' градусов по Цельсию.\n Минимальная температура ' 
+                                + body.daily.data[0].temperatureLow + ' градусов.');
         }
     });
 };

@@ -8,7 +8,7 @@ weatherForm.addEventListener('submit', (e) => {
     
     const location = searchLocation.value;
 
-    messageOne.textContent = 'Searching...';
+    messageOne.textContent = 'Поиск...';
     messageTwo.textContent = '';
 
     fetch('/weather?address=' + encodeURIComponent(location)).then((response) => {

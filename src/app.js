@@ -75,7 +75,7 @@ app.get('/weather', (req, res) => {
 app.get('/products', (req, res) => {
     if (!req.query.search) {
         return res.send({
-            error: 'You must provide a search term.'
+            error: 'Введите местоположение для поиска.'
         });
     }
 
@@ -88,7 +88,7 @@ app.get('/products', (req, res) => {
 app.get('/help/*', (req, res) => {
     res.render('404', {
         title: '404',
-        errorMessage: 'Help article not found.'
+        errorMessage: 'Статья не найдена.'
     });
 });
 

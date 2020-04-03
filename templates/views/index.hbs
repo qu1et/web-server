@@ -5,21 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="icon" href="/img/weather.png">
-    <title>Weather</title>
+    <title>Погода</title>
 </head>
 <body>
     <section class="main-content">
         {{>header}}
-        <p>Use this site to get weather!</p>
+        <p>
+            Используйте этот сайт, чтобы посмотреть погоду.<br>
+            Неожиданно, да?<br>
+            А что вы хотели от сайта, где на главной странице написано "Weather" (с англ. "погода")?
+        </p>
 
         <form>
             <input type="text" name="search" placeholder="Location" autocomplete="off">
-            <button>Search</button>
+            <button>Найти</button>
         </form>
 
         <p id="message-1"></p>
         <p id="message-2"></p>
-
     </section>
     
     {{>footer}}
