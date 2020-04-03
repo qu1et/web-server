@@ -11,8 +11,19 @@
     <section class="main-content">
         {{>header}}
         <p>Use this site to get weather!</p>
+
+        <form>
+            <input type="text" name="search" placeholder="Location" autocomplete="off">
+            <button>Search</button>
+        </form>
+
+        <p id="message-1"></p>
+        <p id="message-2"></p>
+
     </section>
     
     {{>footer}}
+
+    <script src="/js/script.js"></script>
 </body>
 </html>
